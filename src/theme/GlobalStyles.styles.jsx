@@ -44,16 +44,17 @@ const GlobalStyles = createGlobalStyle`
 
         --link-default: #F4F7FE;
     }
-    body {
+    /* body {
          background: url(3.jpg) no-repeat 0 0 !important;
          #root {
              opacity: 0.8 !important;
          }
-    }
+    } */
     *{
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        margin-inline-start: 0;
     }
     /* 기본 폰트 설정 */
     body, html {

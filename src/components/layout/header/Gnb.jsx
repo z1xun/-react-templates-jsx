@@ -15,31 +15,16 @@ const Gnb = () => {
                         <AiFillHome /> Dashboard
                     </Link>
                 </li>
-                <li className={location.pathname === '/marketplace' ? 'active' : ''}>
-                    <Link to="/marketplace">
+                <li className={location.pathname === '/drops' ? 'active' : ''}>
+                    <Link to="/drops">
                         <AiOutlineShoppingCart />
-                        NFT Marketplace
+                        drops
                     </Link>
                 </li>
-                <li className={location.pathname === '/tables' ? 'active' : ''}>
-                    <Link to="/tables">
+                <li className={location.pathname === '/ranking' ? 'active' : ''}>
+                    <Link to="/ranking">
                         <BsBarChartFill />
-                        Tables
-                    </Link>
-                </li>
-                <li className={location.pathname === '/kanban' ? 'active' : ''}>
-                    <Link to="/kanban">
-                        <BsBarChartFill /> Kanban
-                    </Link>
-                </li>
-                <li className={location.pathname === '/profile' ? 'active' : ''}>
-                    <Link to="/profile">
-                        <BsBarChartFill /> Profile
-                    </Link>
-                </li>
-                <li className={location.pathname === '/signin' ? 'active' : ''}>
-                    <Link to="/signin">
-                        <BsBarChartFill /> Sign in
+                        ranking
                     </Link>
                 </li>
             </ul>
@@ -58,6 +43,7 @@ const Gnb = () => {
 
 const GnbWapper = styled.nav`
     ul {
+        display: flex;
         li {
             position: relative;
             margin-left: 3px;
@@ -66,18 +52,6 @@ const GnbWapper = styled.nav`
                 transition: opacity 1s;
             }
             &.active {
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    right: -32px;
-                    transform: translateY(-50%);
-                    width: 4px;
-                    height: 36px;
-                    border-radius: 25px;
-                    background: var(--primary);
-                    opacity: 1;
-                }
                 a {
                     color: var(--primary-dark);
                     font-weight: 700;
@@ -90,7 +64,8 @@ const GnbWapper = styled.nav`
                 display: flex;
                 align-items: center;
                 gap: 10px;
-                padding: 16px 0;
+                height: 80px;
+                padding: 0 20px;
                 color: var(--secondary-grey-600);
                 font-weight: 500;
                 &:hover {
