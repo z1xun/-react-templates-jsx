@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Gnb from "./Gnb";
-import { Heading, Input } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 
 import gsap from "gsap";
 import imglogo from "../../../../src/assets/images/logo/opensea-logo.svg";
-import { HiOutlineUserCircle, HiOutlineShoppingCart } from "react-icons/hi";
+import { HiOutlineUserCircle, HiOutlineShoppingCart, HiSearch } from "react-icons/hi";
+import { MdOutlineWallet } from "react-icons/md";
 
 const Header = () => {
     // 스크롤 이벤트 핸들러
@@ -14,7 +15,10 @@ const Header = () => {
         const headerWrap = document.querySelector(".header-wrap");
 
         if (scrollY >= 100) {
-            gsap.to(headerWrap, { backgroundColor: "#000", duration: 0.5 });
+            gsap.to(headerWrap, {
+                backgroundColor: "#000000",
+                duration: 0.5,
+            });
         } else {
             gsap.to(headerWrap, { backgroundColor: "transparent", duration: 0.5 });
         }
@@ -25,26 +29,55 @@ const Header = () => {
 
     return (
         <HeaderWrap className="header-wrap">
-            <Heading as={"h1"}>
-                <Link to="#">
-                    <img src={imglogo}></img>
-                </Link>
-                <Link to="/" className="logoname">
-                    OpenSea
-                </Link>
-            </Heading>
-            <Gnb />
-            <Input placeholder="Search" />
-            <Link to="/">login</Link>
-            <Link to="/">
-                my <HiOutlineUserCircle />
-            </Link>
-            <Link to="/">
-                <HiOutlineShoppingCart />
-            </Link>
+            <div className="header-left">
+                <Heading as={"h1"}>
+                    <Link to="#">
+                        <img src={imglogo}></img>
+                    </Link>
+                    <Link to="/" className="logoname">
+                        OpenSea
+                    </Link>
+                </Heading>
+                <Gnb />
+            </div>
+            <div className="searchbox">
+                <Icon />
+                <input placeholder="Search" htmlSize={4} width="auto" />
+            </div>
+            <div className="header-right">
+                <Utility to="/">
+                    login
+                    <MdOutlineWallet />
+                </Utility>
+                <Utility to="/">
+                    my <HiOutlineUserCircle />
+                </Utility>
+                <Utility to="/">
+                    cart <HiOutlineShoppingCart />
+                </Utility>
+            </div>
         </HeaderWrap>
     );
 };
+const Utility = styled(Link)`
+    text-indent: -9999px;
+    display: flex;
+    align-items: center;
+    min-width: 48px;
+    color: var(--white);
+    font-size: 24px;
+    border-radius: 12px;
+    padding: 0px 12px;
+    height: 48px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+`;
+const Icon = styled(HiSearch)`
+    font-size: 24px;
+`;
 
 const HeaderWrap = styled.header`
     position: fixed;
@@ -53,8 +86,17 @@ const HeaderWrap = styled.header`
     right: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 80px;
-    padding: 0 20px;
+    padding: 0 60px;
+    z-index: 1000;
+    .header-left {
+        display: flex;
+    }
+    .header-right {
+        display: flex;
+        gap: 10px;
+    }
 
     h1 {
         display: flex;
@@ -71,6 +113,28 @@ const HeaderWrap = styled.header`
         a {
             font-size: 30px;
             font-weight: bold;
+        }
+    }
+    .searchbox {
+        display: flex;
+        align-items: center;
+        line-height: 26px;
+        padding: 8px;
+        border-radius: 12px;
+        height: 48px;
+        border-color: transparent;
+        background-color: rgba(255, 255, 255, 0.12);
+        color: rgb(255, 255, 255);
+        backdrop-filter: blur(20px);
+        flex: 0.8;
+
+        input {
+            width: calc(100% - 24px);
+            background-color: transparent;
+            margin-left: 10px;
+        }
+        input:focus {
+            outline: none;
         }
     }
 `;
