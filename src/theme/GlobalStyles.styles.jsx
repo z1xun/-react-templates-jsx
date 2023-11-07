@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 
 
@@ -28,8 +28,8 @@ const GlobalStyles = createGlobalStyle`
         --info-dark: #0B9ED7;
         --white: #fff;
         --black: #000;
-        --gray-1: #F8F9FA;
-        --gray-2: #E9ECEF;
+        --gray-1: rgba(255, 255, 255, 0.8);
+        --gray-2: rgba(255, 255, 255, 0.6);
         --gray-3: #DEE2E6;
         --gray-4: #CED4DA;
         --gray-5: #ADB5BD;
