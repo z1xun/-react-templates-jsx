@@ -1,6 +1,10 @@
+import CardWrap from "../common/CardWrap";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import styled from "styled-components";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Layout = ({ children }) => {
     return (
@@ -13,6 +17,38 @@ const Layout = ({ children }) => {
                 </Box> */}
                 {children}
                 <div className="innerimg"></div>
+                <div className="slide-section">
+                    <h1>Notable collections</h1>
+                    <Swiper
+                        spaceBetween={10}
+                        slidesPerView={6}
+                        pagination={{ clickable: true }}
+                        onSlideChange={() => console.log("slide change")}
+                        onSwiper={(swiper) => console.log(swiper)}
+                    >
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap />
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
             </MainWrap>
             <Footer />
         </Wrap>
@@ -45,8 +81,9 @@ const MainWrap = styled.main`
             display: block;
             width: 100%;
             height: 100%;
-            background-color: rgb(204, 204, 204, 50%);
-            backdrop-filter: blur(20px);
+            /* background-color: rgb(204, 204, 204, 50%); */
+            background: linear-gradient(to bottom, rgb(85, 85, 85, 0.5) 0%, var(--white) 100%);
+            backdrop-filter: blur(12px);
         }
         &::after {
             position: absolute;
@@ -58,6 +95,15 @@ const MainWrap = styled.main`
             height: 100%;
             background: url("homebg.webp") no-repeat 50% 0;
             z-index: -1000;
+        }
+    }
+    .slide-section {
+        margin-top: 60px;
+        h1 {
+            margin-bottom: 24px;
+            color: var(--black);
+            font-size: 24px;
+            font-weight: 600;
         }
     }
 `;

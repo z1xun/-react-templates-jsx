@@ -9,13 +9,17 @@ import {
     Button,
     useDisclosure,
 } from "@chakra-ui/react";
+import { HiBell } from "react-icons/hi2";
+import styled from "styled-components";
 
-function ModalBox(props) {
+function ModalBox() {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <>
-            <Button onClick={onOpen}>{props.title}</Button>
+            <Button onClick={onOpen}>
+                <HiBell />
+            </Button>
 
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
