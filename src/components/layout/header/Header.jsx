@@ -127,6 +127,7 @@ const HeaderWrap = styled.header`
         color: rgb(255, 255, 255);
         backdrop-filter: blur(20px);
         flex: 0.8;
+        transition: all 0.4s;
 
         input {
             width: calc(100% - 24px);
@@ -135,6 +136,9 @@ const HeaderWrap = styled.header`
         }
         input:focus {
             outline: none;
+        }
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
     }
 `;

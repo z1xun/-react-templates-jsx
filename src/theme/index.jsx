@@ -1,7 +1,7 @@
-import { extendTheme } from '@chakra-ui/react';
-import { textTheme } from './components/text';
-import { tableTheme } from './components/table';
-import { progressTheme } from './components/progress';
+import { extendTheme } from "@chakra-ui/react";
+import { textTheme } from "./components/text";
+import { tableTheme } from "./components/table";
+import { progressTheme } from "./components/progress";
 // import { containerTheme } from './components/container';
 
 const theme = extendTheme({
@@ -14,35 +14,35 @@ const theme = extendTheme({
     styles: {
         global: {
             html: {
-                width: '100%',
-                height: '100%',
+                width: "100%",
+                height: "100%",
             },
             body: {
-                bg: 'white',
-                fontFamily: 'Poppins',
-                fontSize: '16px',
-                fontWeight: '400',
-                color: '#2B3674',
+                bg: "white",
+                fontFamily: "Poppins",
+                fontSize: "16px",
+                fontWeight: "400",
+                color: "#121212",
             },
             // styles for the `a`
             a: {
-                color: '#2B3674',
+                color: "#121212",
                 _hover: {
-                    textDecoration: 'none !important',
+                    textDecoration: "none !important",
                 },
             },
             li: {
-                listStyle: 'none',
+                listStyle: "none",
             },
         },
     },
     space: {
-        4: '25px',
+        4: "25px",
     },
     colors: {
-        primary: '#4318FF',
-        secondary_grey_700: '#707EAE',
-        Secondary_Grey_600: '#A3AED0',
+        primary: "#4318FF",
+        secondary_grey_700: "#707EAE",
+        Secondary_Grey_600: "#A3AED0",
     },
 });
 

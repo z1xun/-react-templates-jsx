@@ -52,6 +52,10 @@ const MainContents = styled(Box)`
     overflow: hidden;
     margin-top: 30px;
     position: relative;
+    transition: all 0.8s;
+    &:hover::after {
+        scale: 1.2;
+    }
 
     &::after {
         position: absolute;

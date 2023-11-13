@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Image } from "@chakra-ui/react";
+import styled from "styled-components";
 
-function CardWrap({ imageUrl, imageAlt, title, price, total }) {
+function CardWrap({ imageUrl, imageAlt, title, floor, total }) {
     return (
-        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Image src={imageUrl} alt={imageAlt} />
+        <Box maxW="sm" borderWidth="1px" borderRadius="lg">
+            <Image w={"100%"} h={"180px"} objectFit={"cover"} src={imageUrl} alt={imageAlt} borderTopRadius="lg" />
 
             <Box p="6">
                 <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
@@ -16,7 +17,7 @@ function CardWrap({ imageUrl, imageAlt, title, price, total }) {
                             Floor
                         </Box>
                         <Box as="span" color="gray.600" fontSize="sm">
-                            {price} ETH
+                            {floor} ETH
                         </Box>
                     </Box>
                     <Box display="flex" flexDirection="column">

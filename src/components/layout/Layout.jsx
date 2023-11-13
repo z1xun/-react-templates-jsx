@@ -5,6 +5,7 @@ import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { HiMiniCheckBadge } from "react-icons/hi2";
 
 const Layout = ({ children }) => {
     return (
@@ -21,31 +22,127 @@ const Layout = ({ children }) => {
                     <h1>Notable collections</h1>
                     <Swiper
                         spaceBetween={10}
-                        slidesPerView={6}
+                        slidesPerView={5}
                         pagination={{ clickable: true }}
                         onSlideChange={() => console.log("slide change")}
                         onSwiper={(swiper) => console.log(swiper)}
                     >
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide1.avif"}
+                                imageAlt={"슬라이드1"}
+                                title={"Being by Parin Heidari "}
+                                floor={"0.03"}
+                                total={"1.28"}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide2.avif"}
+                                imageAlt={"슬라이드2"}
+                                title={"Monster Party"}
+                                floor={"0.05"}
+                                total={"1.58"}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide3.avif"}
+                                imageAlt={"슬라이드3"}
+                                title={"Springfield Punks"}
+                                floor={"0.02"}
+                                total={"3.00"}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide4.avif"}
+                                imageAlt={"슬라이드4"}
+                                title={"PARTS    "}
+                                floor={"0.08"}
+                                total={"1.28"}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide5.avif"}
+                                imageAlt={"슬라이드5"}
+                                title={"/// by Snowfro  "}
+                                floor={"0.01"}
+                                total={"1.04"}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide6.avif"}
+                                imageAlt={"슬라이드6"}
+                                title={"Mutant Ape Yacht Club "}
+                                floor={"0.03"}
+                            />
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+                <div className="slide-section">
+                    <h1>Trending in Art</h1>
+                    <Swiper
+                        spaceBetween={10}
+                        slidesPerView={5}
+                        pagination={{ clickable: true }}
+                        onSlideChange={() => console.log("slide change")}
+                        onSwiper={(swiper) => console.log(swiper)}
+                    >
+                        <SwiperSlide>
+                            <CardWrap
+                                imageUrl={"/slide7.avif"}
+                                imageAlt={"슬라이드1"}
+                                title={"Being by Parin Heidari "}
+                                floor={"0.03"}
+                                total={"1.28"}
+                            />
                         </SwiperSlide>
                         <SwiperSlide>
-                            <CardWrap />
+                            <CardWrap
+                                imageUrl={"/slide8.avif"}
+                                imageAlt={"슬라이드2"}
+                                title={"Monster Party"}
+                                floor={"0.05"}
+                                total={"1.58"}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap
+                                imageUrl={"/slide9.avif"}
+                                imageAlt={"슬라이드3"}
+                                title={"Springfield Punks"}
+                                floor={"0.02"}
+                                total={"3.00"}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap
+                                imageUrl={"/slide10.avif"}
+                                imageAlt={"슬라이드4"}
+                                title={"PARTS    "}
+                                floor={"0.08"}
+                                total={"1.28"}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap
+                                imageUrl={"/slide11.avif"}
+                                imageAlt={"슬라이드5"}
+                                title={"/// by Snowfro  "}
+                                floor={"0.01"}
+                                total={"1.04"}
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardWrap
+                                imageUrl={"/slide6.avif"}
+                                imageAlt={"슬라이드6"}
+                                title={"Mutant Ape Yacht Club "}
+                                floor={"0.03"}
+                            />
                         </SwiperSlide>
                     </Swiper>
                 </div>
